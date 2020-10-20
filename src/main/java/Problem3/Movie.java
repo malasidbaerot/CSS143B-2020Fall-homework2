@@ -21,10 +21,9 @@ public abstract class Movie implements StoreMediaOperations {
 
     @Override
     public boolean equals(Object obj) {
-        // homework
         boolean checker;
         Movie ex= (Movie) obj;
-        if(ex.rating.equals(rating) && ex.title.equals(title)&& ex.id.equals(id)) {
+        if(ex.id.equals(id)) {
             checker = true;
         }
         else{

@@ -8,19 +8,27 @@ public class MovieAction extends Movie {
         super(rating,title);
     }
 
-    public MovieAction(MovieAction anotherMovie) {
+    public MovieAction(MovieAction anotherMovie)
+    {
         super(anotherMovie.rating, anotherMovie.title);
     }
 
     @Override
     public int getLateFeeInDollar()
-
     {
         return lateFeePerDayInDollar;
     }
 
     @Override
     public int calcLateFees(int numOfDaysPastDue) {
-        return numOfDaysPastDue*getLateFeeInDollar();
+        if(numOfDaysPastDue>0 && numOfDaysPastDue<5){
+            return (numOfDaysPastDue)*lateFeePerDayInDollar;
+        }
+        else if(numOfDaysPastDue>=5){
+            return 2*numOfDaysPastDue*lateFeePerDayInDollar;
+        }
+        else{
+            return 0;
+        }
     }
 }

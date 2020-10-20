@@ -20,9 +20,9 @@ public abstract class Book implements StoreMediaOperations {
 
     @Override
     public boolean equals(Object obj) {
+        Book one = (Book) obj;
         boolean checker;
-        Book ex= (Book) obj;
-        if(ex.author.equals(author) && ex.title.equals(title) && ex.id.equals(id)){
+        if(one.id.equals(id)) {
             checker = true;
         }
         else{
@@ -30,5 +30,4 @@ public abstract class Book implements StoreMediaOperations {
         }
         return checker;
     }
-
 }
